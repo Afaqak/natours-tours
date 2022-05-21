@@ -1,0 +1,32 @@
+*,
+*::after,
+*::before {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+
+  @include respond(tab-land) {
+    font-size: 56.5%; //1rem 9/16=56.5% width<1200?
+  }
+  //the smaller one will apply here we had to shift 1st and second
+  //so that second one gets applied to 600 as well as 900
+  @include respond(tab-port) {
+    font-size: 50%; //1rem 8/16=50% width<900?
+  }
+  @include respond(desktop) {
+    font-size: 75%; //12/1rem 16=75%
+  }
+}
+body {
+  padding: 3rem;
+  @include respond(tab-port) {
+    padding: 0%;
+  }
+}
+
+//em and rems are not effected in media queries
+//they follow default browser font size which is 16px
