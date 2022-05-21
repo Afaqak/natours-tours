@@ -73,7 +73,11 @@
       text-transform: uppercase;
       padding: 1rem 2rem;
       display: inline-block;
-
+      @include respond(phone) {
+        font-size: 2rem;
+        padding: 0.5rem 1rem;
+        display: inline-block;
+      }
       background-image: linear-gradient(
         120deg,
         transparent 0%,
@@ -82,7 +86,15 @@
       );
       background-size: 225%;
       transition: all 0.5s;
+      @include respond(tab-port) {
+        background-image: linear-gradient(
+          120deg,
+          transparent 0%,
+          transparent 100%
+        );
 
+        background-size: 100%;
+      }
       span {
         margin: 1rem;
         display: inline-block;
@@ -98,6 +110,9 @@
   }
   &__checkbox:checked ~ &__background {
     transform: scale(50);
+    @include respond(tab-port) {
+      transform: scale(60);
+    }
   }
   &__checkbox:checked ~ &__nav {
     opacity: 1;
