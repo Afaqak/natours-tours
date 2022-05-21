@@ -8,7 +8,25 @@
       rgba($color-primary-light, 0.8),
       rgba($color-primary-dark, 0.8)
     ),
-    url(img/hero.jpg);
+    url(img/hero-small.jpg);
+
+  @media (min-resoultion: 192dpi) and (min-width: 600px), (min-width: 37.5em) {
+    background-image: linear-gradient(
+        to right,
+        rgba($color-primary-light, 0.8),
+        rgba($color-primary-dark, 0.8)
+      ),
+      url(img/hero.jpg);
+  }
+  // @media (min-width: 2000px) {
+  //   background-image: linear-gradient(
+  //       to right,
+  //       rgba(red, 0.8),
+  //       rgba(green, 0.8)
+  //     ),
+  //     url(img/hero.jpg);
+  // }
+
   background-size: cover;
   background-position: top;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0% 100%);
